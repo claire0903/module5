@@ -1,80 +1,41 @@
-{% extends 'tapasapp/base.html' %}
 {% load static %}
 
-{% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Tapas Menu</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: Arial;
-        }
-        .header {
-            background-color: #283d89;
-            color: white;
-            padding: 10px;
-            font-size: 20px;
-        }
-        .footer {
-            background-color: #283d89;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-        .card {
-            max-width: 600px;
-            margin: auto;
-        }
-    </style>
-</head>
+<html>
+    <head>
+        <title>The List</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+        <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static '/bootstrap/css/custom.css' %}">
 
-<body>
-    <div class="header text-align">
-        My Tapas Menu
-    </div>    
+        <script src="{% static '/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
         
-    <div class="container mt-4">
-            <div class="card">
-                <div class="card-header fw-bold"> 
-                    Type in Dish Details:
-                </div>
-
-                <div class="card-body">
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label"> Name: </label>
-                            <input type="text" class="form-control">
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col">
-                                <label class="form-label">Cook Time:</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        
-                            <div class="col">
-                                <label class="form-label">Prep Time:</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-secondary mt-3">Add to dishes</button>
-                    </form>
-                </div>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-custom mb-3 sticky-top" style="background-color: #590404;">
+            <div class="container-fluid">
+                <a class="navbar-brand mb-0" href="{% url 'add_menu' %}">My Tapas Menu</span> </a>
+                <a href="" style="color:white"><i class="material-icons">add</i></a>
+    
             </div>
-        </div>
-    </div>
-    <div class="footer">&copy; 2020</div>
-</body>
+
+        </nav>
+
+        <div class="container">
+            <div class="row">
+
+                {% block content %}
+                {% endblock %}
+
+            </div>
+        </div>  
+        
+        <footer class="footer bg-custom" style="background-color: #590404;">
+
+            <!-- Copyright -->
+            <div class="container">&copy; 2020</div>
+            <!-- Copyright -->
+          
+        </footer>
+
+    </body>
 </html>
-{% endblock %}
