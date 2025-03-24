@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Add New Water Bottle</h1>
+        
+        <form method="post" action="">
+            {% csrf_token %}
+            
+            <!-- Brand Input -->
+            <label for="brand">Brand:</label><br>
+            <input type="text" id="brand" name="brand" placeholder="Enter bottle brand"><br><br>
+
+            <!-- Cost Input -->
+            <label for="cost">Cost:</label><br>
+            <input type="number" id="cost" name="cost" step="0.01" placeholder="Enter cost"><br><br>
+
+            <!-- Size Input -->
+            <label for="size">Size:</label><br>
+            <input type="number" id="size" name="size" step="0.01" placeholder="Enter size"><br><br>
+
+            <!-- Mouth Size Input -->
+            <label for="mouth_size">Mouth Size:</label><br>
+            <input type="number" id="mouth_size" name="mouth_size" step="0.01" placeholder="Enter mouth size"><br><br>
+
+            <!-- Color Input -->
+            <label for="color">Color:</label><br>
+            <input type="text" id="color" name="color" placeholder="Enter color"><br><br>
+
+            <!-- Supplier Input -->
+            <label for="supplier">Supplier:</label><br>
+            <input type="text" id="supplier" name="supplier" placeholder="Enter supplier"><br><br>
+
+            <!-- Current Quantity Input -->
+            <label for="current_quantity">Current Quantity:</label><br>
+            <input type="number" id="current_quantity" name="current_quantity" placeholder="Enter current quantity"><br><br>
+
+            <!-- Submit Button -->
+            <button type="submit">Add Bottle</button> 
+            <!-- doesn't add the waterbottles -->
+        </form>
+    </div>
+{% endblock %}

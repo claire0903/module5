@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Water Bottle List</h1>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>SKU</th>
+                    <th>Brand</th>
+                    <th>Cost</th>
+                    <th>Size</th>
+                    <th>Mouth Size</th>
+                    <th>Color</th>
+                    <th>Supplier</th>
+                    <th>Current Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for bottle in bottles %}
+                <tr>
+                    <td>{{ bottle.sku }}</td>
+                    <td>{{ bottle.brand }}</td>
+                    <td>{{ bottle.cost }}</td>
+                    <td>{{ bottle.size }}</td>
+                    <td>{{ bottle.mouth_size }}</td>
+                    <td>{{ bottle.color }}</td>
+                    <td>{{ bottle.supplier }}</td>
+                    <td>{{ bottle.current_quantity }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="8">No bottles available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
