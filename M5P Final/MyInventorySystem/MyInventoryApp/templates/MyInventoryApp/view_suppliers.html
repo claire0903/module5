@@ -1,0 +1,14 @@
+{% extends 'MyInventoryApp/base.html' %}
+
+{% block content %}
+    <h1>Suppliers List</h1>
+    <ul>
+        {% for supplier in suppliers %}
+            <li>
+                {{ supplier.name }} - {{ supplier.city }}, {{ supplier.country }} (Created at: {{ supplier.created_at }})
+            </li>
+        {% empty %}
+            <li>No suppliers available.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
